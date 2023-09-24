@@ -86,8 +86,8 @@ You can publish the package config by running the following Artisan command:
 php artisan v:p --provider="EvoMark\LaravelIdObfuscator\Provider"
 ```
 
-| Setting  | Type   | Default                 | Description                               |
-| -------- | ------ | ----------------------- | ----------------------------------------- |
-| seed     | string | laravel-id-obfuscator   | A seed string for the encoder             |
-| length   | int    | 8                       | The amount of digits to pad the output to |
-| alphabet | string | [a-zA-Z0-9] (as string) | The alphabet to use when encoding IDs     |
+| Setting  | Type   | Default                 | Description                              |
+| -------- | ------ | ----------------------- | ---------------------------------------- |
+| seed     | string | laravel-id-obfuscator   | A seed string for the encoder            |
+| length   | int    | 8                       | The amount of chars to pad the output to |
+| alphabet | string | [a-zA-Z0-9] (as string) | The alphabet to use when encoding IDs    |
