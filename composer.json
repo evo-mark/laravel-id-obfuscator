@@ -1,0 +1,29 @@
+{
+  "name": "evo-mark/laravel-id-obfuscator",
+  "description": "Obfuscate your IDs when sending them to the frontend",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "EvoMark\\LarvelIdObfuscator\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "EvoMark\\LaravelIdObfuscator\\Provider"
+      ]
+    }
+  },
+  "authors": [
+    {
+      "name": "evoMark"
+    }
+  ],
+  "require-dev": {
+    "orchestra/testbench": "^8.0"
+  },
+  "require": {
+    "hashids/hashids": "^5.0"
+  }
+}
