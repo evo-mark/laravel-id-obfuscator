@@ -7,9 +7,9 @@
 </a>
 <br />
 <p align="center">
-    <a href="https://packagist.org/packages/evo-mark/laravel-id-obfusactor"><img src="https://img.shields.io/packagist/v/evo-mark/laravel-id-obfusactor?logo=packagist&logoColor=white" alt="Build status" /></a>
-    <a href="https://packagist.org/packages/evo-mark/laravel-id-obfusactor"><img src="https://img.shields.io/packagist/dt/evo-mark/laravel-id-obfusactor" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/evo-mark/laravel-id-obfusactor"><img src="https://img.shields.io/packagist/l/evo-mark/laravel-id-obfusactor" alt="Licence"></a>
+    <a href="https://packagist.org/packages/evo-mark/laravel-id-obfuscator"><img src="https://img.shields.io/packagist/v/evo-mark/laravel-id-obfuscator?logo=packagist&logoColor=white" alt="Build status" /></a>
+    <a href="https://packagist.org/packages/evo-mark/laravel-id-obfuscator"><img src="https://img.shields.io/packagist/dt/evo-mark/laravel-id-obfuscator" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/evo-mark/laravel-id-obfuscator"><img src="https://img.shields.io/packagist/l/evo-mark/laravel-id-obfuscator" alt="Licence"></a>
 </p>
 <br />
 
