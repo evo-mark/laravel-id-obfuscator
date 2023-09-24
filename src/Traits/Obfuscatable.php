@@ -1,9 +1,9 @@
 <?php
 
-namespace EvoMark\LarvelIdObfuscator\Traits;
+namespace EvoMark\LaravelIdObfuscator\Traits;
 
 use Illuminate\Database\Eloquent\Model;
-use EvoMark\LarvelIdObfuscator\Facades\Obfuscate;
+use EvoMark\LaravelIdObfuscator\Facades\Obfuscate;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
 trait Obfuscatable

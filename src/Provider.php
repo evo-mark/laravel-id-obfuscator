@@ -1,12 +1,12 @@
 <?php
 
-namespace EvoMark\LarvelIdObfuscator;
+namespace EvoMark\LaravelIdObfuscator;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
-use EvoMark\LarvelIdObfuscator\Facades\Obfuscate;
-use EvoMark\LarvelIdObfuscator\Services\ObfuscateService;
+use EvoMark\LaravelIdObfuscator\Facades\Obfuscate;
+use EvoMark\LaravelIdObfuscator\Services\ObfuscateService;
 
 class Provider extends ServiceProvider
 {

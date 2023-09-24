@@ -1,6 +1,6 @@
 <?php
 
-namespace EvoMark\LarvelIdObfuscator\Services;
+namespace EvoMark\LaravelIdObfuscator\Services;
 
 use Hashids\Hashids;
 
@@ -33,7 +33,7 @@ class ObfuscateService
         return $this->encoder->encode($id);
     }
 
-    public function decode(int|string $input = ''): ?int
+    public function decode(int|string $input = ''): int|string|null
     {
         if (empty($input)) {
             return '';

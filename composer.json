@@ -5,7 +5,7 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "EvoMark\\LarvelIdObfuscator\\": "src/"
+      "EvoMark\\LaravelIdObfuscator\\": "src/"
     }
   },
   "extra": {
