@@ -27,4 +27,23 @@ class Builder extends FoundationBuilder
 
         return parent::whereKey($id);
     }
+
+    /**
+     * Add a where clause on the primary key to the query.
+     *
+     * @param  mixed  $id
+     * @return $this
+     */
+    public function whereKeyNot($id)
+    {
+        if (is_array($id) || $id instanceof Arrayable) {
+            $id = Arr::map($id, function ($item) {
+                return gettype($item) === 'string' ? Obfuscate::decode($item) : $item;
+            });
+        } else if ($id !== null && gettype($id) === "string") {
+            $id = Obfuscate::decode($id);
+        }
+
+        return parent::whereKeyNot($id);
+    }
 }

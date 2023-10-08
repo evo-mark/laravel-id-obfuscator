@@ -1,11 +1,13 @@
-<a href="https://evomark.co.uk" target="_blank" alt="Link to evoMark's website" style="text-align:center;display:block">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--light.svg">
-      <img alt="evoMark company logo" src="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--light.svg" style="max-height: 50px; max-width:100%">
-    </picture>
-</a>
-<br />
+<p align="center">
+    <a href="https://evomark.co.uk" target="_blank" alt="Link to evoMark's website">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--dark.svg">
+          <source media="(prefers-color-scheme: light)" srcset="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--light.svg">
+          <img alt="evoMark company logo" src="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--light.svg" width="500">
+        </picture>
+    </a>
+</p>
+
 <p align="center">
     <a href="https://packagist.org/packages/evo-mark/laravel-id-obfuscator"><img src="https://img.shields.io/packagist/v/evo-mark/laravel-id-obfuscator?logo=packagist&logoColor=white" alt="Build status" /></a>
     <a href="https://packagist.org/packages/evo-mark/laravel-id-obfuscator"><img src="https://img.shields.io/packagist/dt/evo-mark/laravel-id-obfuscator" alt="Total Downloads"></a>
@@ -54,6 +56,20 @@ public function index(User $user)
 }
 ```
 
+`Obfuscatable` models will also feature automatic decoding when using the model's `find`-style functions: e.g. `find`, `findOrFail`, `findMany`, `findOrNew`, `findOr`
+
+```php
+// SomeController
+
+/**
+ * @param string $id The obfuscated order ID
+ */
+public function index($id)
+{
+    $order = Order::find($id);
+}
+```
+
 ## Validation
 
 **Laravel ID Obfuscator** comes with a built-in rule extension for validating incoming obfuscated ids, simply:
@@ -91,3 +107,7 @@ php artisan v:p --provider="EvoMark\LaravelIdObfuscator\Provider"
 | seed     | string | laravel-id-obfuscator   | A seed string for the encoder            |
 | length   | int    | 8                       | The amount of chars to pad the output to |
 | alphabet | string | [a-zA-Z0-9] (as string) | The alphabet to use when encoding IDs    |
+
+## Limitations
+
+-   Laravel ID Obfuscator can only be used on incrementing primary keys
