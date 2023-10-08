@@ -3,8 +3,9 @@
 namespace EvoMark\LaravelIdObfuscator\Traits;
 
 use Illuminate\Database\Eloquent\Model;
-use EvoMark\LaravelIdObfuscator\Facades\Obfuscate;
+use EvoMark\LaravelIdObfuscator\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use EvoMark\LaravelIdObfuscator\Facades\Obfuscate;
 
 trait Obfuscatable
 {
@@ -29,6 +30,17 @@ trait Obfuscatable
         }
 
         return $class::findOrFail($id);
+    }
+
+    /**
+     * Create a new Eloquent query builder for the model.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @return EvoMark\LaravelIdObfuscator\Eloquent\Builder|static
+     */
+    public function newEloquentBuilder($query)
+    {
+        return new Builder($query);
     }
 
     public function toArray()
