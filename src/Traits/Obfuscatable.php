@@ -46,8 +46,9 @@ trait Obfuscatable
         $data = parent::toArray();
 
         // Add or modify data as needed
-        $data[$this->getKeyName()] = Obfuscate::encode($data[$this->getKeyName()]);
-
+        if(isset($data[$this->getKeyName()])){
+            $data[$this->getKeyName()] = Obfuscate::encode($data[$this->getKeyName()]);
+        }
         return $data;
     }
 }
