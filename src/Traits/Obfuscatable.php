@@ -34,9 +34,9 @@ trait Obfuscatable
      * Create a new Eloquent query builder for the model.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
-     * @return EvoMark\LaravelIdObfuscator\Eloquent\Builder|static
+     * @return \EvoMark\LaravelIdObfuscator\Eloquent\Builder
      */
-    public function newEloquentBuilder($query)
+    public function newEloquentBuilder($query): Builder
     {
         return new Builder($query);
     }
