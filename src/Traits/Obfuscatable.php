@@ -12,7 +12,7 @@ trait Obfuscatable
     public function obfuscatedId(): Attribute
     {
         return Attribute::make(
-            get: fn () => Obfuscate::encode($this->{$this->getKeyName()})
+            get: fn() => Obfuscate::encode($this->{$this->getKeyName()})
         );
     }
 
@@ -46,8 +46,9 @@ trait Obfuscatable
         $data = parent::toArray();
 
         // Add or modify data as needed
-        if(isset($data[$this->getKeyName()])){
-            $data[$this->getKeyName()] = Obfuscate::encode($data[$this->getKeyName()]);
+        $keyName = $this->getKeyName();
+        if (isset($data[$keyName])) {
+            $data[$keyName] = Obfuscate::encode($data[$keyName]);
         }
         return $data;
     }

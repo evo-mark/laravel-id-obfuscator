@@ -1,35 +1,44 @@
 {
-  "name": "evo-mark/laravel-id-obfuscator",
-  "description": "Obfuscate your IDs when sending them to the frontend",
-  "type": "library",
-  "license": "MIT",
-  "autoload": {
-    "psr-4": {
-      "EvoMark\\LaravelIdObfuscator\\": "src/"
+    "name": "evo-mark/laravel-id-obfuscator",
+    "description": "Obfuscate your IDs when sending them to the frontend",
+    "type": "library",
+    "license": "MIT",
+    "scripts": {
+        "test": "vendor/bin/phpunit --testdox"
+    },
+    "autoload": {
+        "psr-4": {
+            "EvoMark\\LaravelIdObfuscator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EvoMark\\LaravelIdObfuscator\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EvoMark\\LaravelIdObfuscator\\Provider"
+            ]
+        }
+    },
+    "homepage": "https://github.com/evo-mark/laravel-id-obfuscator",
+    "authors": [
+        {
+            "name": "Craig Riley",
+            "email": "c.riley@evomark.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+        "hashids/hashids": "^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "laravel/pint": "^1.0",
+        "phpunit/phpunit": "^10.5"
     }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "EvoMark\\LaravelIdObfuscator\\Provider"
-      ]
-    }
-  },
-  "homepage": "https://github.com/evo-mark/laravel-id-obfuscator",
-  "authors": [
-    {
-      "name": "Craig Riley",
-      "email": "c.riley@evomark.co.uk",
-      "role": "Developer"
-    }
-  ],
-  "require": {
-    "php": "^8.1",
-    "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
-    "hashids/hashids": "^5.0"
-  },
-  "require-dev": {
-    "orchestra/testbench": "^8.0|^9.0",
-    "laravel/pint": "^1.0"
-  }
 }

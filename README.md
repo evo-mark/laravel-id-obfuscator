@@ -17,7 +17,9 @@
 
 # Laravel ID Obfuscator
 
-**Laravel 10 Compatible**
+Incrementing primary keys may reveal more than you wish in a public-facing application. Order IDs can reveal your sales volume to competitors and User IDs can invite enumeration attacks.
+
+This package implements a two-way hashing on `Obfuscatable` models and converts an ID of, say, `7` into an ID of `fh38aj2e` when it travels to the frontend and converts it back on return.
 
 > Warning: This package only obfuscates IDs and should not be used if secure encryption of identifiers is required
 
@@ -108,6 +110,13 @@ php artisan v:p --provider="EvoMark\LaravelIdObfuscator\Provider"
 | length   | int    | 8                       | The amount of chars to pad the output to |
 | alphabet | string | [a-zA-Z0-9] (as string) | The alphabet to use when encoding IDs    |
 
+## Q & A
+
+1. Why not use UUIDs?
+
+- UUIDs can be [Bad for database performance](https://www.danielfullstack.com/article/stop-using-uuids-in-your-database), whereas this obfuscation only runs when data bridges between the backend and the frontend of your application.
+
 ## Limitations
 
--   Laravel ID Obfuscator can only be used on incrementing primary keys
+- Laravel ID Obfuscator can only be used on incrementing primary keys
+- Since this package overrides the `newEloquentBuilder` method on obfuscated models, it is incompatible with any other packages that also do the same.
