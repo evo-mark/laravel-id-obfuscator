@@ -9,7 +9,10 @@ use EvoMark\LaravelIdObfuscator\Facades\Obfuscate;
 
 trait Obfuscatable
 {
-    public function obfuscatedId(): Attribute
+    /**
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute<string, never>
+     */
+    protected function obfuscatedId(): Attribute
     {
         return Attribute::make(
             get: fn() => Obfuscate::encode($this->{$this->getKeyName()})
