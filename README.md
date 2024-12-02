@@ -119,4 +119,12 @@ php artisan v:p --provider="EvoMark\LaravelIdObfuscator\Provider"
 ## Limitations
 
 - Laravel ID Obfuscator can only be used on incrementing primary keys
-- Since this package overrides the `newEloquentBuilder` method on obfuscated models, it is incompatible with any other packages that also do the same.
+- Since this package overrides the `newEloquentBuilder` method on obfuscated models, it is incompatible with any other packages that also do the same. Some examples might include:
+    - [mikebronner/laravel-model-caching](https://github.com/mikebronner/laravel-model-caching)
+    - [grimzy/laravel-mysql-spatial](https://github.com/grimzy/laravel-mysql-spatial)
+    - [fico7489/laravel-pivot](https://github.com/fico7489/laravel-pivot)
+    - [spatie/laravel-query-builder](https://github.com/spatie/laravel-query-builder)
+    - [dwightwatson/rememberable](https://github.com/dwightwatson/rememberable)
+    - [chelout/laravel-relationship-events](https://github.com/chelout/laravel-relationship-events)
+    - [lazychaser/laravel-nestedset](https://github.com/lazychaser/laravel-nestedset)
+- Presently, if an `Obfuscatable` model appears as part of another model as a foreign key, it will not be obfuscated
