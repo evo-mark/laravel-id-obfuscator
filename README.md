@@ -96,6 +96,12 @@ $encoded = Obfuscate::encode(5);
 $decoded = Obfuscate::decode($encoded);
 ```
 
+## toArray
+
+Primary keys on Obfuscated models will automatically be obfuscated when sending models to the frontend.
+
+If you want to encode foreign keys on the model as well, enable the `encodeForeign` setting in your `obfuscator` config.
+
 ## Config
 
 You can publish the package config by running the following Artisan command:
@@ -104,11 +110,12 @@ You can publish the package config by running the following Artisan command:
 php artisan v:p --provider="EvoMark\LaravelIdObfuscator\Provider"
 ```
 
-| Setting  | Type   | Default                 | Description                              |
-| -------- | ------ | ----------------------- | ---------------------------------------- |
-| seed     | string | laravel-id-obfuscator   | A seed string for the encoder            |
-| length   | int    | 8                       | The amount of chars to pad the output to |
-| alphabet | string | [a-zA-Z0-9] (as string) | The alphabet to use when encoding IDs    |
+| Setting       | Type   | Default                 | Description                              |
+| ------------- | ------ | ----------------------- | ---------------------------------------- |
+| seed          | string | laravel-id-obfuscator   | A seed string for the encoder            |
+| length        | int    | 8                       | The amount of chars to pad the output to |
+| alphabet.     | string | [a-zA-Z0-9] (as string) | The alphabet to use when encoding IDs    |
+| encodeForeign | bool   | false                   | Encode obfuscated foreign keys too.      |
 
 ## Q & A
 
@@ -127,4 +134,12 @@ php artisan v:p --provider="EvoMark\LaravelIdObfuscator\Provider"
     - [dwightwatson/rememberable](https://github.com/dwightwatson/rememberable)
     - [chelout/laravel-relationship-events](https://github.com/chelout/laravel-relationship-events)
     - [lazychaser/laravel-nestedset](https://github.com/lazychaser/laravel-nestedset)
-- Presently, if an `Obfuscatable` model appears as part of another model as a foreign key, it will not be obfuscated
+
+## Support Open-Source Software
+
+We're providing this community adapter free-of-charge without any paywalled features. However, all development and maintenance costs time, energy and money. So please help fund this project if you can.
+
+<p align="center" style="display:flex;align-items:center;gap:1rem;justify-content:center">
+<a href="https://github.com/sponsors/craigrileyuk" target="_blank"><img src="https://img.shields.io/badge/sponsor-GitHub%20Sponsors-fafbfc?style=for-the-badge&logo=github" /></a>
+<a href="https://www.buymeacoffee.com/craigrileyuk" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" /></a>
+</p>
