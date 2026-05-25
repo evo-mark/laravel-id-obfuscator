@@ -35,6 +35,12 @@ class Provider extends ServiceProvider
                 return false;
             }
 
+            if (config('obfuscator.decodeValidatedIds') === true) {
+                $data = $validator->getData();
+                data_set($data, $attribute, $decoded);
+                $validator->setData($data);
+            }
+
             return DB::table($parameters[0])
                 ->where($parameters[1] ?? $attribute, $decoded)
                 ->exists();

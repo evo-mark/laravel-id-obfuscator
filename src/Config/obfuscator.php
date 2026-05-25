@@ -8,5 +8,7 @@ return [
     // The alphabet to use in your obfuscated IDs
     'alphabet' => null,
     // Encode foreign keys from model relationships when sending to the frontend if those models are obfuscated
-    'encodeForeign' => false
+    'encodeForeign' => false,
+    // Automatically decode validated data when using the `id_exists` validation rule
+    'decodeValidatedIds' => false
 ];

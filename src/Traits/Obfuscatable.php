@@ -65,7 +65,7 @@ trait Obfuscatable
             $data[$keyName] = Obfuscate::encode($data[$keyName]);
         }
 
-        if (config('obfuscate.encodeForeign') === true) {
+        if (config('obfuscator.encodeForeign') === true) {
             $foreignKeys = $this->getModelRelationsForeignKeys($this);
             foreach ($foreignKeys as $foreignKey) {
                 if (!isset($data[$foreignKey])) continue;
